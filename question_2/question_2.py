@@ -18,6 +18,32 @@ def load_text(filename):
 	with open(filename) as file:
 		return array([list(map(float, line.split(", "))) for line in file])
 
+# a
+heatmap_directory = "local_density_of_states_heatmap"
+if not isdir(heatmap_directory):
+	print("Generating heatmaps...")
+	mkdir(heatmap_directory)
+	for level in range(11):
+		data_matrix = load_text(f"{data_directory}/{level}.txt")
+		plt.imshow(data_matrix, cmap="hot")
+		plt.colorbar()
+		plt.title(f"Local Density of States for Level {level}")
+		plt.savefig(f"{heatmap_directory}/{level}.png")
+		plt.close()
+
+# b
+heightmap_directory = "local_density_of_states_height"
+if not isdir(heightmap_directory):
+	print("Generating height plots...")
+	mkdir(heightmap_directory)
+	for level in range(11):
+		data_matrix = load_text(f"{data_directory}/{level}.txt")
+		x_values, y_values = meshgrid(arange(data_matrix.shape[1]), arange(data_matrix.shape[0]))
+		fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
+		ax.plot_surface(x_values, y_values, data_matrix, cmap="hot")
+		ax.set_title(f"Local Density of States for Level {level}")
+		plt.savefig(f"{heightmap_directory}/{level}.png")
+		plt.close()
 
 # c
 def extract_subregion(data_matrix):
