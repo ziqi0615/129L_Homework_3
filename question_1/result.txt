@@ -1,0 +1,28 @@
+Part a: Numerical Verification
+Numerical result: (4.275823659012837, 2.5251607131519544e-08)
+Closed-form result: 4.275823659011514
+
+Difference ratio: 1.0000000000003095
+
+A prime is not symmetirc positive definite, so it doesn;t work, whereas A is, so it works.
+
+Part c: Correlation Function and Moments
+Moments (Analytical and Numerical):
+v1 (analytical): 0.08955223880597016
+v1 (numerical): 0.08955223880595856
+v2 (analytical): 0.10447761194029859
+v2 (numerical): 0.10447761194025493
+v3 (analytical): 0.43283582089552236
+v3 (numerical): 0.4328358208953833
+v1^2 (analytical): 0.32145243929605705
+v1^2 (numerical): 0.3214524392957401
+v2^2 (analytical): 0.3541991534862999
+v2^2 (numerical): 0.3541991534861026
+v3^2 (analytical): 0.4261528179995544
+v3^2 (numerical): 0.4261528179992484
+v1v2 (analytical): -0.12497215415460013
+v1v2 (numerical): -0.12497215415384234
+v2v3 (analytical): -0.10403207841390061
+v2v3 (numerical): -0.10403207841380893
+v1v3 (analytical): 0.05368678993094231
+v1v3 (numerical): 0.05368678993095696
